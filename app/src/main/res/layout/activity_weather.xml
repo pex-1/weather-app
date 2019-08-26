@@ -132,7 +132,6 @@
         tools:listitem="@layout/item_weather" />
 
     <FrameLayout
-        android:visibility="gone"
         android:id="@+id/emptyScreenFrameLayout"
         android:layout_width="match_parent"
         android:layout_height="0dp"
