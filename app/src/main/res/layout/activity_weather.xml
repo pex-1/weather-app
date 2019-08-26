@@ -1,0 +1,187 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.weather.WeatherActivity">
+
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/colorPrimary"
+        android:theme="@style/ThemeOverlay.AppCompat.Dark"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:title="Start your search here..." />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/todayConstraintLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/spacing_x1"
+        android:layout_marginEnd="@dimen/spacing_x1"
+        android:background="@drawable/card_view_background"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/toolbar">
+
+        <TextView
+            android:id="@+id/dayTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/spacing_x6"
+            android:layout_marginTop="@dimen/spacing_x5"
+            android:textAllCaps="true"
+            android:textColor="@color/textColor"
+            android:textSize="@dimen/day_text_size"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="Monday" />
+
+        <TextView
+            android:id="@+id/degreesTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/spacing_x2"
+            android:textColor="@color/textColor"
+            android:textSize="@dimen/main_degrees_text_size"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="@+id/dayTextView"
+            app:layout_constraintTop_toBottomOf="@+id/dayTextView"
+            tools:text="25°C" />
+
+        <ImageView
+            android:id="@+id/forecastImageView"
+            android:layout_width="@dimen/main_image_size"
+            android:layout_height="@dimen/main_image_size"
+            android:layout_marginEnd="@dimen/spacing_x6"
+            app:layout_constraintEnd_toEndOf="@+id/viewTop"
+            app:layout_constraintStart_toStartOf="@+id/conditionTextView"
+            app:layout_constraintTop_toTopOf="@id/dayTextView"
+            app:srcCompat="@drawable/ic_placeholder" />
+
+        <View
+            android:id="@+id/viewTop"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/line_thickness"
+            android:layout_marginStart="@dimen/spacing_x6"
+            android:layout_marginTop="@dimen/spacing_x4"
+            android:layout_marginEnd="@dimen/spacing_x6"
+            android:background="@color/line_color"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/degreesTextView" />
+
+        <TextView
+            android:id="@+id/dateTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/spacing_x1"
+            android:layout_marginTop="@dimen/spacing_x2"
+            android:textAllCaps="true"
+            android:textColor="@color/textColor"
+            android:textSize="@dimen/text_size_date"
+            app:layout_constraintStart_toStartOf="@+id/viewTop"
+            app:layout_constraintTop_toBottomOf="@+id/viewTop"
+            tools:text="22 may 2019" />
+
+        <TextView
+            android:id="@+id/conditionTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/spacing_x2"
+            android:layout_marginEnd="@dimen/spacing_x6"
+            android:textAllCaps="false"
+            android:textColor="@color/textColor"
+            android:textSize="@dimen/text_size_condition"
+            app:layout_constraintEnd_toEndOf="@+id/viewTop"
+            app:layout_constraintTop_toBottomOf="@+id/viewTop"
+            tools:text="Partly cloudy" />
+
+        <View
+            android:id="@+id/viewBottom"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/line_thickness"
+            android:layout_marginStart="@dimen/spacing_x6"
+            android:layout_marginTop="@dimen/spacing_x2"
+            android:layout_marginEnd="@dimen/spacing_x6"
+            android:layout_marginBottom="@dimen/spacing_x5"
+            android:background="@color/line_color"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/conditionTextView" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/daysRecyclerView"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginStart="@dimen/spacing_x1"
+        android:layout_marginTop="@dimen/spacing_x2"
+        android:layout_marginEnd="@dimen/spacing_x1"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/todayConstraintLayout"
+        tools:listitem="@layout/item_weather" />
+
+    <FrameLayout
+        android:id="@+id/emptyScreenFrameLayout"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:background="@color/colorPrimary"
+        android:clickable="true"
+        android:focusable="true"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/toolbar">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_placeholder" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/empty_state_string"
+                android:textColor="@color/textColor"
+                android:textSize="@dimen/no_data_text_size"
+                android:textStyle="bold" />
+
+        </LinearLayout>
+
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/cardViewProgressBar"
+            android:layout_width="@dimen/card_view_progress_size"
+            android:layout_height="@dimen/card_view_progress_size"
+            android:layout_gravity="center"
+            android:elevation="@dimen/card_view_progress_elevation"
+            android:visibility="gone"
+            app:cardCornerRadius="@dimen/card_view_corner_radius">
+
+            <ProgressBar
+                android:layout_width="@dimen/progress_bar_size"
+                android:layout_height="@dimen/progress_bar_size"
+                android:layout_gravity="center" />
+        </androidx.cardview.widget.CardView>
+
+    </FrameLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

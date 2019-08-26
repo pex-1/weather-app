@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginBottom="@dimen/spacing_x1"
+    android:backgroundTint="@color/colorPrimary"
+    android:elevation="@dimen/spacing_x1"
+    android:orientation="vertical"
+    app:cardCornerRadius="@dimen/corner_radius">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="horizontal"
+        android:paddingTop="@dimen/spacing_x4"
+        android:paddingBottom="@dimen/spacing_x4"
+        android:weightSum="5">
+
+
+        <TextView
+            android:id="@+id/itemDayTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/spacing_x3"
+            android:layout_weight="3"
+            android:textAllCaps="true"
+            android:textColor="@color/textColor"
+            android:textSize="@dimen/item_text_size"
+            tools:text="Tuesday" />
+
+        <TextView
+            android:id="@+id/itemDegreesTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:textAlignment="center"
+            android:textColor="@color/textColor"
+            android:textSize="@dimen/item_text_size"
+            android:textStyle="bold"
+            tools:text="18°C" />
+
+        <ImageView
+            android:id="@+id/itemImageView"
+            android:layout_width="@dimen/item_image_size"
+            android:layout_height="@dimen/item_image_size"
+            android:layout_gravity="center"
+            android:layout_marginEnd="@dimen/spacing_x2"
+            android:layout_weight="1"
+            app:srcCompat="@drawable/ic_placeholder" />
+    </LinearLayout>
+
+</androidx.cardview.widget.CardView>

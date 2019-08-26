@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!-- General -->
+    <dimen name="spacing_x1">4dp</dimen>
+    <dimen name="spacing_x2">8dp</dimen>
+    <dimen name="spacing_x3">16dp</dimen>
+    <dimen name="spacing_x4">24dp</dimen>
+    <dimen name="spacing_x6">40dp</dimen>
+    <dimen name="spacing_x5">32dp</dimen>
+
+    <!-- Details -->
+
+    <!-- Weather -->
+    <dimen name="day_text_size">30sp</dimen>
+    <dimen name="main_degrees_text_size">55sp</dimen>
+    <dimen name="main_image_size">130dp</dimen>
+    <dimen name="line_thickness">1dp</dimen>
+    <dimen name="text_size_date">18sp</dimen>
+    <dimen name="text_size_condition">18sp</dimen>
+    <dimen name="no_data_image_size">100dp</dimen>
+    <dimen name="no_data_text_size">12sp</dimen>
+    <dimen name="card_view_progress_size">50dp</dimen>
+    <dimen name="card_view_progress_elevation">8dp</dimen>
+    <dimen name="card_view_corner_radius">25dp</dimen>
+    <dimen name="progress_bar_size">40dp</dimen>
+    <dimen name="corner_radius">10dp</dimen>
+
+    <!-- Item -->
+    <dimen name="item_text_size">24sp</dimen>
+    <dimen name="item_image_size">30dp</dimen>
+</resources>
