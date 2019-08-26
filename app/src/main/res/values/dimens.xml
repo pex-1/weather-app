@@ -14,7 +14,7 @@
     <!-- Weather -->
     <dimen name="day_text_size">30sp</dimen>
     <dimen name="main_degrees_text_size">55sp</dimen>
-    <dimen name="main_image_size">130dp</dimen>
+    <dimen name="main_image_size">120dp</dimen>
     <dimen name="line_thickness">1dp</dimen>
     <dimen name="text_size_date">18sp</dimen>
     <dimen name="text_size_condition">18sp</dimen>
