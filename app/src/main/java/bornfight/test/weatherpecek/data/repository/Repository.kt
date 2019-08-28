@@ -37,8 +37,6 @@ object Repository {
             }
             override fun onFailure(call: Call<YoutubeResponse>, t: Throwable) {
             }
-
-
         })
     }
 
@@ -52,8 +50,8 @@ object Repository {
                     }else{
                         apiError.postValue(response.errorBody()?.string()?: DEFAULT_ERROR_MESSAGE)
                     }
-
                 }
+
                 override fun onFailure(call: Call<ApixuWeatherResponse>, t: Throwable) {
                     apiError.postValue(t.message?: DEFAULT_ERROR_MESSAGE)
                 }
