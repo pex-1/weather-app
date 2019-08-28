@@ -3,4 +3,11 @@
 
     <string name="empty_state_string">Enter city name in the search bar</string>
     <string name="search">Search</string>
+    <string name="video_link_image">Video link image</string>
+    <string name="today_forecast_image">Today forecast image</string>
+    <string name="no_data_placeholder_image">No data placeholder image</string>
+    <string name="item_view_weather_icon">Item view weather icon</string>
+
+    <bool name="landscape">false</bool>
+
 </resources>

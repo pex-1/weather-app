@@ -10,8 +10,6 @@ data class YoutubeResponse(
     val kind: String,
     @SerializedName("nextPageToken")
     val nextPageToken: String,
-    @SerializedName("pageInfo")
-    val pageInfo: PageInfo,
     @SerializedName("regionCode")
     val regionCode: String
 )

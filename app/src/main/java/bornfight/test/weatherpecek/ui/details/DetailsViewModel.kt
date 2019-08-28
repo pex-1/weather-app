@@ -6,7 +6,7 @@ import bornfight.test.weatherpecek.data.repository.Repository
 
 class DetailsViewModel:ViewModel() {
 
-    var youtubeSeek = 0
+    var youtubeSeek = 0f
 
     var youtubeIdLiveData: LiveData<String>? = null
 

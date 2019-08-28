@@ -9,7 +9,15 @@ import bornfight.test.weatherpecek.data.repository.Repository
 
 class WeatherViewModel:ViewModel(), Observer<ApixuWeatherResponse> {
 
-    var weatherForecast = MutableLiveData<ApixuWeatherResponse>()
+    var apiErrorLiveData: LiveData<String>? = null
+
+    var showError: Boolean = true
+
+    fun apiErrorSet(){
+        apiErrorLiveData = Repository.apiErrorLiveData()
+    }
+
+    private var weatherForecast = MutableLiveData<ApixuWeatherResponse>()
 
     var youtubeSearch = ""
 
@@ -33,6 +41,7 @@ class WeatherViewModel:ViewModel(), Observer<ApixuWeatherResponse> {
     fun getWeatherForecast(searchQuery: String){
         Repository.getWeatherForecast(searchQuery)
     }
+
 
 
 }
