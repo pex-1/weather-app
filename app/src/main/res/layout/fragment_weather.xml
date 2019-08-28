@@ -2,9 +2,9 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mainFragmentConstraintLayout"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context=".ui.weather.WeatherActivity">
+    android:layout_height="match_parent">
 
 
     <androidx.appcompat.widget.Toolbar
@@ -33,7 +33,7 @@
             android:id="@+id/dayTextView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="@dimen/spacing_x6"
+            android:layout_marginStart="@dimen/spacing_x4"
             android:layout_marginTop="@dimen/spacing_x5"
             android:textAllCaps="true"
             android:textColor="@color/textColor"
@@ -55,22 +55,22 @@
             tools:text="25°C" />
 
         <ImageView
+            android:contentDescription="@string/today_forecast_image"
             android:id="@+id/forecastImageView"
             android:layout_width="@dimen/main_image_size"
             android:layout_height="@dimen/main_image_size"
-            android:layout_marginEnd="@dimen/spacing_x6"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toEndOf="@+id/degreesTextView"
-            app:layout_constraintTop_toTopOf="@id/dayTextView"
+            android:layout_marginBottom="@dimen/spacing_x3"
+            app:layout_constraintBottom_toTopOf="@+id/conditionTextView"
+            app:layout_constraintEnd_toEndOf="@+id/conditionTextView"
             app:srcCompat="@drawable/ic_placeholder" />
 
         <View
             android:id="@+id/viewTop"
             android:layout_width="match_parent"
             android:layout_height="@dimen/line_thickness"
-            android:layout_marginStart="@dimen/spacing_x6"
+            android:layout_marginStart="@dimen/spacing_x4"
             android:layout_marginTop="@dimen/spacing_x4"
-            android:layout_marginEnd="@dimen/spacing_x6"
+            android:layout_marginEnd="@dimen/spacing_x4"
             android:background="@color/line_color"
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintRight_toRightOf="parent"
@@ -106,15 +106,27 @@
             android:id="@+id/viewBottom"
             android:layout_width="match_parent"
             android:layout_height="@dimen/line_thickness"
-            android:layout_marginStart="@dimen/spacing_x6"
+            android:layout_marginStart="@dimen/spacing_x4"
             android:layout_marginTop="@dimen/spacing_x2"
-            android:layout_marginEnd="@dimen/spacing_x6"
+            android:layout_marginEnd="@dimen/spacing_x4"
             android:layout_marginBottom="@dimen/spacing_x5"
             android:background="@color/line_color"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintRight_toRightOf="parent"
             app:layout_constraintTop_toBottomOf="@id/conditionTextView" />
+
+        <ImageView
+            android:contentDescription="@string/video_link_image"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/spacing_x3"
+            android:layout_marginEnd="@dimen/spacing_x4"
+            app:layout_constraintRight_toRightOf="@id/todayConstraintLayout"
+            app:layout_constraintTop_toTopOf="@id/todayConstraintLayout"
+            app:srcCompat="@drawable/ic_video_red"
+            tools:layout_editor_absoluteX="263dp"
+            tools:layout_editor_absoluteY="-38dp" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
@@ -152,8 +164,9 @@
             android:orientation="vertical">
 
             <ImageView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:contentDescription="@string/no_data_placeholder_image"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
                 android:src="@drawable/ic_placeholder" />
 
             <TextView
@@ -161,27 +174,28 @@
                 android:layout_height="wrap_content"
                 android:text="@string/empty_state_string"
                 android:textColor="@color/textColor"
-                android:textSize="@dimen/no_data_text_size"
-                android:textStyle="bold" />
+                android:textSize="@dimen/no_data_text_size"/>
 
         </LinearLayout>
 
-
-        <androidx.cardview.widget.CardView
-            android:id="@+id/cardViewProgressBar"
-            android:layout_width="@dimen/card_view_progress_size"
-            android:layout_height="@dimen/card_view_progress_size"
-            android:layout_gravity="center"
-            android:elevation="@dimen/card_view_progress_elevation"
-            android:visibility="gone"
-            app:cardCornerRadius="@dimen/card_view_corner_radius">
-
-            <ProgressBar
-                android:layout_width="@dimen/progress_bar_size"
-                android:layout_height="@dimen/progress_bar_size"
-                android:layout_gravity="center" />
-        </androidx.cardview.widget.CardView>
-
     </FrameLayout>
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cardViewProgressBar"
+        android:layout_width="@dimen/card_view_progress_size"
+        android:layout_height="@dimen/card_view_progress_size"
+        android:elevation="@dimen/card_view_progress_elevation"
+        android:visibility="gone"
+        app:cardCornerRadius="@dimen/card_view_corner_radius"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <ProgressBar
+            android:layout_width="@dimen/progress_bar_size"
+            android:layout_height="@dimen/progress_bar_size"
+            android:layout_gravity="center" />
+    </androidx.cardview.widget.CardView>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
